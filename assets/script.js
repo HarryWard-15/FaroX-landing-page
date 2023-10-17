@@ -6,17 +6,8 @@ const splashPage = document.querySelector('.splash-page');
 const container = document.querySelector('.container');
 
 function animateSplash() {
-    let width = 0;
-    setTimeout(() => {
-        setInterval(() => {
-            container.style.width = `${width}vw`;
-            if (width !== 30) width += 0.25;
-        },16);
-    },1000);
-
-    setTimeout(() => {splashPage.style.opacity = '0'},5000);
-    setTimeout(() => {splashPage.style.display = 'none'},6000);
-
+    setTimeout(() => {splashPage.style.opacity = '0'},3000);
+    setTimeout(() => {splashPage.style.display = 'none'},4000);
 }
 
 function spinCard(card) {
@@ -35,6 +26,7 @@ function spinCard(card) {
 
 spinCard(card);
 animateSplash()
+
 
 
 
