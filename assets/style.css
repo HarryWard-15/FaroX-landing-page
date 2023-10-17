@@ -1,0 +1,76 @@
+.card-showcase {
+    background: linear-gradient(90deg, #FFF, #EEE);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.card-showcase::before {
+    content: '';
+    position: absolute;
+    top: -30vh;
+    left: 0;
+    width:100%;
+    background: linear-gradient(#FFF,#E4E4E4);
+}
+.wrapper {
+    perspective: 1000px;
+}
+.card {
+    transform-style: preserve-3d;
+    width: 325px;
+    height: 503px;
+    transform-origin: 175px 250px;
+    position: relative;
+}
+.card > div {
+    position: absolute;
+    height: 503px;
+}
+.front {
+    width: 325px;
+    background: url(./images/cardfront.png);
+    transform: translate3d(0, 0, 2px) rotate(30deg);
+}
+.back {
+    width: 325px;
+    background: url(./images/cardback.png);
+    transform: translate3d(0, 0,-2px) rotateY(180deg) rotate(-30deg);
+}
+.side {
+    width: 4px;
+    height: 470px !important;
+    transform: rotateY(-90deg) translate3d(0,-66px,-20px) rotateX(30deg);
+    background-color: black;
+}
+.top {
+    width: 4px;
+    height: 297px !important;
+    transform: rotateY(-90deg) translate3d(0,-114px,-287px) rotateX(-60deg);
+    background-color: black;
+}
+.bottom {
+    width: 4px;
+    height: 297px !important;
+    transform: rotateY(-90deg) translate3d(0,318px,-32px) rotateX(-60deg);
+    background-color: black;
+}
+.sideother {
+    width: 4px;
+    height: 470px !important;
+    transform: rotateY(90deg) translate3d(0,68px,182px) rotateX(-30deg);
+    background-color: black;
+    transform-origin: bottom;
+}
+.card .shadow {
+    width: 500px;
+    height: 15px;
+    background: radial-gradient(rgba(0,0,0,0.4), transparent);
+    transform: rotateX(90deg) translate3d(-80px, 0,-550px);
+    transform-origin: bottom;
+}
+.front, .back, .side {
+    background-size: cover;
+    pointer-events: none;
+}
