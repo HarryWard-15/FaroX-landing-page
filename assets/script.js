@@ -2,11 +2,26 @@ const section = document.querySelector('.card-showcase');
 const card = document.querySelector('.card');
 const shadow = document.querySelector('.shadow');
 const body = document.querySelector('body');
+const splashPage = document.querySelector('.splash-page');
+const container = document.querySelector('.container');
 
-let calc = 0;
-let height = -50;
+function animateSplash() {
+    let width = 0;
+    setTimeout(() => {
+        setInterval(() => {
+            container.style.width = `${width}vw`;
+            if (width !== 30) width += 0.25;
+        },16);
+    },1000);
+
+    setTimeout(() => {splashPage.style.opacity = '0'},5000);
+    setTimeout(() => {splashPage.style.display = 'none'},6000);
+
+}
 
 function spinCard(card) {
+    let calc = 0;
+    let height = -50;
     setInterval(() => {
         if (calc == 360) calc = 0;
         if (calc < 180) height += 0.5;
@@ -19,6 +34,7 @@ function spinCard(card) {
 }
 
 spinCard(card);
+animateSplash()
 
 
 
