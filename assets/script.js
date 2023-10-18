@@ -1,9 +1,6 @@
-const section = document.querySelector('.card-showcase');
 const card = document.querySelector('.card');
 const shadow = document.querySelector('.shadow');
-const body = document.querySelector('body');
 const splashPage = document.querySelector('.splash-page');
-const container = document.querySelector('.container');
 
 function animateSplash() {
     setTimeout(() => {splashPage.style.opacity = '0'},3000);
@@ -24,7 +21,7 @@ function spinCard(card) {
     },16);
 }
 
-spinCard(card);
+// spinCard(card);
 animateSplash()
 
 
