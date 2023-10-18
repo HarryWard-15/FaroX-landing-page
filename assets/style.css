@@ -19,9 +19,11 @@ main::before {
     opacity: 0.2;
     left: 0;
     right: 0;
+    z-index: -1;
     bottom: 0;
     width: 100vw;
     position: absolute;
+    pointer-events: null;
 }
 @media only screen and (max-width: 768px) {
     main::before{
@@ -51,6 +53,11 @@ main::before {
 }
 .video-container {
     text-align: center;
+    width: min-content;
+}
+iframe {
+    pointer-events: unset !important;
+    z-index: 1000;
 }
 
 /* Splash Page */
