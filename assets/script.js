@@ -21,7 +21,7 @@ function spinCard(card) {
     },16);
 }
 
-// spinCard(card);
+spinCard(card);
 animateSplash()
 
 
