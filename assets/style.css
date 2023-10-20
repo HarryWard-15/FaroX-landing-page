@@ -5,8 +5,9 @@
 body {
     background: linear-gradient(-45deg, #000000, #222222, #111111, #333333);
     background-size: 400% 400%;
-    animation: gradient 5s ease infinite;
+    animation: gradient 15s ease infinite;
     overflow: hidden;
+    font-family: 'Josefin Sans';
 }
 main::before {
     content: '';
@@ -23,7 +24,7 @@ main::before {
     bottom: 0;
     width: 100vw;
     position: absolute;
-    pointer-events: null;
+    top: 0;
 }
 @media only screen and (max-width: 768px) {
     main::before{
@@ -32,33 +33,123 @@ main::before {
 }
 
 /* Main Content */
-.header {
+main {
     display: flex;
-    width: 100%;
-    flex-direction: column;
-    padding-top: 50px;
-    justify-content: center;
-    & .full-logo {
-        width: 300px;
-        height: auto;
-        margin: auto;
-    }
-    & .welcome-message {
-        text-align: center;
-        color: white;
-        opacity: 0.5;
-        font-size: medium;
+    justify-content: space-between;
+}
+.floating-logo {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    color: white;
+    font-size: 8px;
+    & h2 {
         font-weight: normal;
     }
 }
-.video-container {
+.content {
+    display: flex;
+    width: 45vw;
+    height: 90vh;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 50px;
+    & .main-message {
+        text-align: center;
+        color: white;
+        font-size: 3rem;
+        font-weight: normal;
+        text-align: left;
+
+    }
+}
+
+.video-content {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
     text-align: center;
-    width: min-content;
+    color: white;
 }
-iframe {
-    pointer-events: unset !important;
-    z-index: 1000;
+.btn {
+    width: max-content;
+    padding: 10px 30px;
+    background: linear-gradient(-45deg, #000000, #222222, #111111, #333333);    color: white;
+    background-size: 400%;
+    animation: gradient 5s infinite;
+    border-radius: 95px 8px;
+    border: none;
+    position: relative;
 }
+.btn:hover {
+    background: linear-gradient(45deg, rgba(187,2,161,1) 0%, rgba(69,1,108,1) 36%, rgba(0,212,255,1) 100%);
+    background-size: 200% 200%;
+    animation: gradient 2s infinite;
+    border: none;
+}
+.btn:before {
+    content: '';
+    position: absolute;
+    border-radius: 95px 8px;
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    background: linear-gradient(45deg, rgba(187,2,161,1) 0%, rgba(69,1,108,1) 36%, rgba(0,212,255,1) 100%);
+    background-size: 400%;
+    animation: gradient 2s infinite;
+    z-index: -1;
+}
+
+form {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    & .form-lure {
+        color: white;
+        font-weight: lighter;
+        font-size: 0.75rem;
+    }
+    & input {
+        padding: 5px;
+        margin-top: 15px;
+    }
+    & .full {
+        width: 100%;
+    }
+    & .half {
+        width: 45%
+    }
+    & button {
+        width: 100% !important;
+        margin-top: 15px !important;
+    }
+    & .name {
+        display: flex;
+        width: 100%;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+}
+
+/* Video Popup */
+.video {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+.video-close {
+    color: white;
+}
+
 
 /* Splash Page */
 
@@ -93,15 +184,18 @@ iframe {
 }
 
 /* Spinning Card */
+.main-left {
+    height: 100vh;
+    width: 45vw;
+}
 
 .card-showcase {
     height: 100vh;
     display: flex;
     justify-content: right;
-    margin: -10% 10%;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
-    scale: 0.75;
+    scale: 0.6;
 }
 .wrapper {
     perspective: 1000px;
