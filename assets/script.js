@@ -1,9 +1,15 @@
 const card = document.querySelector('.card');
 const shadow = document.querySelector('.shadow');
 const splashPage = document.querySelector('.splash-page');
-const videoButton = document.querySelector('.video-button');
-const videoOverlay = document.querySelector('.video');
-const videoCloseButton = document.querySelector('.video-close');
+const faqQuestion = document.querySelectorAll('.question');
+
+faqQuestion.forEach(el => {
+    el.addEventListener('click', function() {
+        console.log(el.childNodes);
+        let answer = el.childNodes[3];
+        answer.style.display = 'block';
+    })
+});
 
 function animateSplash() {
     setTimeout(() => {splashPage.style.opacity = '0'},3000);
@@ -23,13 +29,6 @@ function spinCard(card) {
         calc += 2;
     },16);
 }
-
-videoButton.addEventListener('click', function() {
-    videoOverlay.style.display = 'flex';
-});
-videoCloseButton.addEventListener('click', function() {
-    videoOverlay.style.display = 'none';
-})
 
 
 spinCard(card);

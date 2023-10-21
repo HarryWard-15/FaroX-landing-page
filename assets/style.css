@@ -1,21 +1,22 @@
 * {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 body {
     background: linear-gradient(-45deg, #000000, #222222, #111111, #333333);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    overflow: hidden;
     font-family: 'Josefin Sans';
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 main::before {
     content: '';
-    background: url(./images/Pattern-03.png);
+    background: url(./images/pattern-flipped.png);
     background-position: bottom;
     background-size: cover;
     object-fit: cover;
-    height: 100vh;
     overflow: visible;
     opacity: 0.2;
     left: 0;
@@ -23,17 +24,13 @@ main::before {
     z-index: -1;
     bottom: 0;
     width: 100vw;
+    height: auto;
     position: absolute;
     top: 0;
 }
-@media only screen and (max-width: 768px) {
-    main::before{
-        background: url(./images/pattern-flipped.png);
-    }
-}
 
 /* Main Content */
-main {
+.hero-section {
     display: flex;
     justify-content: space-between;
 }
@@ -59,10 +56,23 @@ main {
         text-align: center;
         color: white;
         font-size: 3rem;
+        max-width: 75%;
         font-weight: normal;
         text-align: left;
 
     }
+}
+.giant-lure {
+    color: white;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: center;
+    padding: 50px 0;
+}
+.timer {
+    color: white;
+    font-size: 25px;
+    opacity: 0.6;
 }
 
 .video-content {
@@ -81,8 +91,12 @@ main {
     border-radius: 95px 8px;
     border: none;
     position: relative;
+    font-family: 'Josefin Sans';
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
 }
-.btn:hover {
+.btn:hover, .btn:focus {
     background: linear-gradient(45deg, rgba(187,2,161,1) 0%, rgba(69,1,108,1) 36%, rgba(0,212,255,1) 100%);
     background-size: 200% 200%;
     animation: gradient 2s infinite;
@@ -115,9 +129,17 @@ form {
     & input {
         padding: 5px;
         margin-top: 15px;
+        background: rgba(255,255,255,0.4);
+        border-radius: 95px 8px;
+        text-indent: 15px;
+        opacity: 0.5;
+        color: white;
+    }
+    & input::placeholder {
+        color: white;
     }
     & .full {
-        width: 100%;
+        width: 75%;
     }
     & .half {
         width: 45%
@@ -136,25 +158,18 @@ form {
 
 /* Video Popup */
 .video {
-    position: absolute;
-    display: none;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-.video-close {
-    color: white;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
 /* Splash Page */
 
 .splash-page {
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,6 +230,7 @@ form {
     width: 325px;
     background: url(./images/cardfront.png);
     transform: translate3d(0, 0, 2px) rotate(30deg);
+    box-shadow: white;
 }
 .back {
     width: 325px;
@@ -257,7 +273,89 @@ form {
     background-size: cover;
     pointer-events: none;
 }
+.card-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: end;
+    width: 30%;
+    & .feature-card {
+        border-radius: 95px 8px;
+        width: 150px;
+        margin: 10px 0;
+        height: 150px;
+        background: linear-gradient(-45deg, #000000, #222222, #111111, #333333);    color: white;
+        background-size: 400%;
+        animation: gradient 5s infinite;
+        position: relative;
+        text-align: center;
+        padding: 25px;
+        transition: all 0.5s ease-in;
+    }
+    & .feature-card::before {
+        content: '';
+        position: absolute;
+        border-radius: 95px 8px;
+        top: -2px;
+        left: -2px;
+        bottom: -2px;
+        right: -2px;
+        background: linear-gradient(45deg, rgba(187,2,161,1) 0%, rgba(69,1,108,1) 36%, rgba(0,212,255,1) 100%);
+        background-size: 400%;
+        animation: gradient 2s infinite;
+        z-index: -1;
+    }
+    & .feature-card:hover {
+        background: white;
+        color: black;
+        transition: all 0.5s ease-out;
+    }
+    & .feature-card:nth-child(odd) {
+        align-self: flex-start;
+        transform: rotateX(180deg);
+    }
+}
 
+
+.faq-box {
+    width: 70%;
+    margin: auto;
+    color: white;
+    & .question {
+        background: linear-gradient(-45deg, #000000, #222222, #111111, #333333);    color: white;
+        background-size: 400%;
+        animation: gradient 5s infinite;
+        margin: 10px 0;
+        border-radius: 15px;
+        padding: 15px;
+        & .question-title {
+            /* padding: 0 15px 15px 15px; */
+            position: relative;
+            &:before {
+                content: '+';
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+        }
+    }
+    & .question-answer {
+        display: none;
+        background: grey;
+        margin: 0 25px;
+    }
+}
+.faq {
+    color: white;
+    padding: 15px 25px;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: max-content;
+    margin: auto;
+    font-size: 25px;
+}
 /* Animations */
 
 @keyframes gradient {
@@ -282,6 +380,21 @@ form {
     100% {
         opacity: 1;
     }
+}
+
+@media only screen and (max-width: 1000px) {
+ .video {
+    flex-direction: column;
+    & iframe {
+        margin: auto;
+    }
+    & .card-section {
+        margin: 40px 0 80px 0;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+ }
 }
 
 

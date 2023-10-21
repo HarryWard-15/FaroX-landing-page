@@ -10,6 +10,7 @@
 </head>
 <body>
     <main>
+        <div class="hero-section">
         <section class="main-left">
             <div class="card-showcase">
                 <div class="wrapper">
@@ -27,26 +28,28 @@
         </section>
 
         <section class="content">
-            <h1 class="main-message">Your Money. <br/>Your Way. <br/>Our Vision.</h1>
+            <!-- <h1 class="main-message">Your Money. <br/>Your Way. <br/>Our Vision.</h1> -->
+            <h1 class="main-message">Forget everything you think you know about your Money.</h1>
+
             <div class="video-content">
-                <button class="btn video-button">Who Are We?</button>
+                <a href="#who-are-we" class="btn video-button">Who Are We?</a>
             </div>
             <form class="signup-form">
-                <h3 class="form-lure">Fill out your details for a chance to win 1 of 100 exclusive FaroX cards that give you free lifetime access to everything we create!</h3>
+                <h3 class="timer">Time Remaining: <span class="remainging-time">30:20:10:5s</span></h3>
+                <!-- <h3 class="form-lure">Fill out your details for a chance to win 1 of 100 exclusive FaroX cards that give you free lifetime access to everything we create!</h3> -->
                 <div class="name">
-                    <input class='half first' type="text" placeholder="First Name"></input>
-                    <input class='half last' type="text" placeholder="Last Name"></input>
+                    <input class='half first' type="text" placeholder="Name"></input>
                 </div>
                 <input class='full' type="email" placeholder="Email"></input>
-                <input class='full' type="text" placeholder="Phone Number"></input>
                 <button type="submit" class="form-submit btn">Join Our Journey</button>
             </form>
         </section> 
         
         <section class="floating-logo">
-            <img class='full-logo' src='./assets/images/logo-trimmed.png' width="200px">
+            <img class='full-logo' src='./assets/images/logo-trimmed.png' width="200px" alt="FaroX Logo">
             <h2 class="full-logo-lure">Lifetime Access Exclusive Card</h2>
         </section>
+        </div>
 
         <section class="splash-page">
             <div class="container">
@@ -55,9 +58,48 @@
             </div>
         </section>
 
-        <section class="video">
+        <h3 class="giant-lure">Currenly there are <span class="queue">#</span> people in the FaroX Family</h3>
+
+        <section class="video" id="who-are-we">
             <iframe width="560" height="315" src="http://www.youtube.com/embed/Dw3BZ6O_8LY?si=fd3cUMXlC3R3j0ww?controls=1&autoplay=1"allowfullscreen></iframe>
-            <p class="video-close">X</p>
+            <div class="card-section">
+                <div class="feature-card">
+                    <h4>Collaborative Investments</h4>
+                    <p>This is just some simple text</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Savings Vaults</h4>
+                    <p>This is just some simple text</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Bill Sharing</h4>
+                    <p>This is just some simple text</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-box">
+            <h3 class="faq">Frequently Asked Questions</h3>
+            <div class="question">
+                <h5 class="question-title">Title</h5>
+                <p class="question-answer">This is the answer</p>
+            </div>
+            <div class="question">
+                <h5 class="question-title">Title</h5>
+                <p class="question-answer">This is the answer</p>
+            </div>
+            <div class="question">
+                <h5 class="question-title">Title</h5>
+                <p class="question-answer">This is the answer</p>
+            </div>
+            <div class="question">
+                <h5 class="question-title">Title</h5>
+                <p class="question-answer">This is the answer</p>
+            </div>
+            <div class="question">
+                <h5 class="question-title">Title</h5>
+                <p class="question-answer">This is the answer</p>
+            </div>
         </section>
 
     </main>
