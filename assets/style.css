@@ -13,7 +13,7 @@ body {
 }
 main::before {
     content: '';
-    background: url(./images/pattern-flipped.png);
+    background: url(./images/Pattern-03.png);
     background-position: bottom;
     background-size: cover;
     object-fit: cover;
@@ -25,7 +25,7 @@ main::before {
     bottom: 0;
     width: 100vw;
     height: auto;
-    position: absolute;
+    position: fixed;
     top: 0;
 }
 
@@ -44,6 +44,58 @@ main::before {
         font-weight: normal;
     }
 }
+
+
+.chevron-container {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+   }
+   
+.chevron {
+     position: absolute;
+     width: 50px;
+     height: 5px;
+     opacity: 0;
+     transform: scale(0.5);
+     animation: move-chevron 3s ease-out infinite;
+}
+   
+.chevron:first-child {
+     animation: move-chevron 3s ease-out 1s infinite;
+}
+   
+.chevron:nth-child(2) {
+     animation: move-chevron 3s ease-out 2s infinite;
+}
+   
+.chevron:before,
+.chevron:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: white;
+}
+   
+.chevron:before {
+    left: 0;
+    transform: skewY(30deg);
+}
+   
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skewY(-30deg);
+}
+   
 .content {
     display: flex;
     width: 45vw;
@@ -63,7 +115,7 @@ main::before {
     }
 }
 .giant-lure {
-    color: white;
+    background: white;
     font-size: 40px;
     font-weight: bolder;
     text-align: center;
@@ -73,6 +125,7 @@ main::before {
     color: white;
     font-size: 25px;
     opacity: 0.6;
+    margin: 25px 0;
 }
 
 .video-content {
@@ -161,8 +214,14 @@ form {
     width: 90%;
     margin: auto;
     display: flex;
+    margin-bottom: 50px;
     flex-direction: row;
     justify-content: space-between;
+    & .faro-video {
+        align-self: center ;
+        width: 50vw;
+        height: calc(50vw / (16 / 9));
+    }
 }
 
 
@@ -207,10 +266,9 @@ form {
 .card-showcase {
     height: 100vh;
     display: flex;
-    justify-content: right;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    scale: 0.6;
 }
 .wrapper {
     perspective: 1000px;
@@ -231,11 +289,18 @@ form {
     background: url(./images/cardfront.png);
     transform: translate3d(0, 0, 2px) rotate(30deg);
     box-shadow: white;
+    box-shadow: 0 0 20px 1px white;
+    border-radius: 20px;
+
+
 }
 .back {
     width: 325px;
     background: url(./images/cardback.png);
     transform: translate3d(0, 0,-2px) rotateY(180deg) rotate(-30deg);
+    box-shadow: 0 0 20px 1px white;
+    border-radius: 20px;
+
 }
 .side {
     width: 4px;
@@ -312,24 +377,22 @@ form {
     }
     & .feature-card:nth-child(odd) {
         align-self: flex-start;
-        transform: rotateX(180deg);
     }
 }
 
 
 .faq-box {
     width: 70%;
+    max-width: 1000px;
     margin: auto;
-    color: white;
     & .question {
-        background: linear-gradient(-45deg, #000000, #222222, #111111, #333333);    color: white;
+        background: white;
         background-size: 400%;
         animation: gradient 5s infinite;
         margin: 10px 0;
         border-radius: 15px;
-        padding: 15px;
+        padding: 25px;
         & .question-title {
-            /* padding: 0 15px 15px 15px; */
             position: relative;
             &:before {
                 content: '+';
@@ -342,11 +405,55 @@ form {
         }
     }
     & .question-answer {
-        display: none;
-        background: grey;
-        margin: 0 25px;
+        background: #222222;
+        margin-top: 25px;
+        border-radius: 10px;
+        padding: 20px 10px;
+        color: white;
+        text-indent: 15px;
     }
 }
+details{
+    font-size: 1.5rem;
+    background: white;
+    background-size: 400%;
+    animation: gradient 5s infinite;
+    margin: 20px 0;
+    border-radius: 15px;
+    padding: 25px;
+  }
+
+summary {
+    padding: .5em 1.3rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;  
+    transition: height 1s ease;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  summary:after{
+    content: "\002B";
+    scale: 2;
+  }
+  
+  details[open] summary {
+      border-bottom: 1px solid #aaa;
+      margin-bottom: .5em;
+  }
+  
+  details[open] summary:after{
+    content: "\00D7";
+  }
+  
+  details[open] div{
+    padding: .5em 1em;
+
+  }
 .faq {
     color: white;
     padding: 15px 25px;
@@ -354,7 +461,7 @@ form {
     border-radius: 10px;
     width: max-content;
     margin: auto;
-    font-size: 25px;
+    font-size: 35px;
 }
 /* Animations */
 
@@ -381,11 +488,30 @@ form {
         opacity: 1;
     }
 }
+@keyframes move-chevron {
+    25% {
+     opacity: 1;
+       }
+    33.3% {
+     opacity: 1;
+     transform: translateY(30px);
+    }
+    66.6% {
+     opacity: 1;
+     transform: translateY(50px);
+    }
+    100% {
+     opacity: 0;
+     transform: translateY(80px) scale(0.5);
+    }
+   }
+
+/* Responsiveness */
 
 @media only screen and (max-width: 1000px) {
  .video {
     flex-direction: column;
-    & iframe {
+    & .faro-video {
         margin: auto;
     }
     & .card-section {
@@ -395,6 +521,11 @@ form {
         justify-content: space-between;
     }
  }
+}
+@media only screen and (max-width:1400px) {
+    .card-showcase {
+        scale: 0.6;
+    }
 }
 
 

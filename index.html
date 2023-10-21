@@ -31,18 +31,22 @@
             <!-- <h1 class="main-message">Your Money. <br/>Your Way. <br/>Our Vision.</h1> -->
             <h1 class="main-message">Forget everything you think you know about your Money.</h1>
 
-            <div class="video-content">
+            <!-- <div class="video-content">
                 <a href="#who-are-we" class="btn video-button">Who Are We?</a>
-            </div>
+            </div> -->
             <form class="signup-form">
                 <h3 class="timer">Time Remaining: <span class="remainging-time">30:20:10:5s</span></h3>
-                <!-- <h3 class="form-lure">Fill out your details for a chance to win 1 of 100 exclusive FaroX cards that give you free lifetime access to everything we create!</h3> -->
                 <div class="name">
                     <input class='half first' type="text" placeholder="Name"></input>
                 </div>
                 <input class='full' type="email" placeholder="Email"></input>
                 <button type="submit" class="form-submit btn">Join Our Journey</button>
             </form>
+            <div class="chevron-container">
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+                <div class="chevron"></div>
+            </div>
         </section> 
         
         <section class="floating-logo">
@@ -58,10 +62,12 @@
             </div>
         </section>
 
-        <h3 class="giant-lure">Currenly there are <span class="queue">#</span> people in the FaroX Family</h3>
+        <h3 class="giant-lure" id="who-are-we">Currenly there are <span class="queue">#</span> people in the FaroX Family</h3>
 
-        <section class="video" id="who-are-we">
-            <iframe width="560" height="315" src="http://www.youtube.com/embed/Dw3BZ6O_8LY?si=fd3cUMXlC3R3j0ww?controls=1&autoplay=1"allowfullscreen></iframe>
+        <div class="background-image">
+
+        <section class="video">
+            <iframe class="faro-video" width="560" height="315" src="http://www.youtube.com/embed/Dw3BZ6O_8LY?si=fd3cUMXlC3R3j0ww?controls=1&autoplay=1"allowfullscreen></iframe>
             <div class="card-section">
                 <div class="feature-card">
                     <h4>Collaborative Investments</h4>
@@ -80,27 +86,28 @@
 
         <section class="faq-box">
             <h3 class="faq">Frequently Asked Questions</h3>
-            <div class="question">
-                <h5 class="question-title">Title</h5>
-                <p class="question-answer">This is the answer</p>
-            </div>
-            <div class="question">
-                <h5 class="question-title">Title</h5>
-                <p class="question-answer">This is the answer</p>
-            </div>
-            <div class="question">
-                <h5 class="question-title">Title</h5>
-                <p class="question-answer">This is the answer</p>
-            </div>
-            <div class="question">
-                <h5 class="question-title">Title</h5>
-                <p class="question-answer">This is the answer</p>
-            </div>
-            <div class="question">
-                <h5 class="question-title">Title</h5>
-                <p class="question-answer">This is the answer</p>
-            </div>
+            <details>
+                <summary class="question-title">Title</summary>
+                <div class="question-answer">This is the answer</div>
+            </details>
+            <details>
+                <summary class="question-title">Title</summary>
+                <div class="question-answer">This is the answer</div>
+            </details>
+            <details>
+                <summary class="question-title">Title</summary>
+                <div class="question-answer">This is the answer</div>
+            </details>
+            <details>
+                <summary class="question-title">Title</summary>
+                <div class="question-answer">This is the answer</div>
+            </details>
+            <details>
+                <summary class="question-title">Title</summary>
+                <div class="question-answer">This is the answer</div>
+            </details>
         </section>
+        </div>
 
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
