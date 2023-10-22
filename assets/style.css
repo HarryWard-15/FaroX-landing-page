@@ -28,15 +28,32 @@ main::before {
     position: fixed;
     top: 0;
 }
+main {
+    overflow: hidden;
+}
 
 /* Main Content */
+.banner {
+    background: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    line-height: 30px;
+    height: 25px;
+    text-align: center;
+    z-index: 9999;
+    & .remaining-time-banner {
+        color: red;
+        font-weight: bold;
+    }
+}
 .hero-section {
     display: flex;
     justify-content: space-between;
 }
 .floating-logo {
     position: absolute;
-    top: 10px;
+    top: 35px;
     left: 25px;
     color: white;
     font-size: 8px;
@@ -115,6 +132,7 @@ main::before {
     }
 }
 .giant-lure {
+    max-width: 100vw;
     background: white;
     font-size: 40px;
     font-weight: bolder;
@@ -217,10 +235,57 @@ form {
     margin-bottom: 50px;
     flex-direction: row;
     justify-content: space-between;
+    flex-direction: column;
+    & .faro-video {
+        margin: auto;
+    }
+    & .card-section {
+        display: flex;
+        flex-direction: row;
+        margin: 50px auto 150px auto;
+        flex-direction: row;
+        width: 75%;
+        justify-content: space-between;
+    }
     & .faro-video {
         align-self: center ;
         width: 50vw;
+        margin-top: 50px;
         height: calc(50vw / (16 / 9));
+    }
+    & .feature-card {
+        border-radius: 95px 8px;
+        width: 25%;
+        margin: 10px 0;
+        height: 150px;
+        background: linear-gradient(-45deg, #000000, #222222, #111111, #333333);    color: white;
+        background-size: 400%;
+        animation: gradient 5s infinite;
+        position: relative;
+        text-align: center;
+        padding: 25px;
+        transition: all 0.5s ease-in;
+    }
+    & .feature-card::before {
+        content: '';
+        position: absolute;
+        border-radius: 95px 8px;
+        top: -2px;
+        left: -2px;
+        bottom: -2px;
+        right: -2px;
+        background: linear-gradient(45deg, rgba(187,2,161,1) 0%, rgba(69,1,108,1) 36%, rgba(0,212,255,1) 100%);
+        background-size: 400%;
+        animation: gradient 2s infinite;
+        z-index: -1;
+    }
+    & .feature-card:hover {
+        background: white;
+        color: black;
+        transition: all 0.5s ease-out;
+    }
+    & .feature-card:nth-child(odd) {
+        align-self: flex-start;
     }
 }
 
@@ -337,47 +402,6 @@ form {
 .front, .back, .side {
     background-size: cover;
     pointer-events: none;
-}
-.card-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: end;
-    width: 30%;
-    & .feature-card {
-        border-radius: 95px 8px;
-        width: 150px;
-        margin: 10px 0;
-        height: 150px;
-        background: linear-gradient(-45deg, #000000, #222222, #111111, #333333);    color: white;
-        background-size: 400%;
-        animation: gradient 5s infinite;
-        position: relative;
-        text-align: center;
-        padding: 25px;
-        transition: all 0.5s ease-in;
-    }
-    & .feature-card::before {
-        content: '';
-        position: absolute;
-        border-radius: 95px 8px;
-        top: -2px;
-        left: -2px;
-        bottom: -2px;
-        right: -2px;
-        background: linear-gradient(45deg, rgba(187,2,161,1) 0%, rgba(69,1,108,1) 36%, rgba(0,212,255,1) 100%);
-        background-size: 400%;
-        animation: gradient 2s infinite;
-        z-index: -1;
-    }
-    & .feature-card:hover {
-        background: white;
-        color: black;
-        transition: all 0.5s ease-out;
-    }
-    & .feature-card:nth-child(odd) {
-        align-self: flex-start;
-    }
 }
 
 
@@ -507,24 +531,82 @@ summary {
    }
 
 /* Responsiveness */
-
 @media only screen and (max-width: 1000px) {
- .video {
-    flex-direction: column;
-    & .faro-video {
-        margin: auto;
+ .faq {
+    font-size: 20px;
+ }
+ .video .card-section {
+    width: 90%;
+    .feature-card {        
+        width: 22%;
     }
-    & .card-section {
-        margin: 40px 0 80px 0;
-        flex-direction: row;
-        width: 100%;
-        justify-content: space-between;
-    }
+}
+ .video .faro-video {
+    width: 75vw;
+    height: calc(75vw / (16 / 9));
+ }
+ .giant-lure {
+    font-size: 30px;
  }
 }
 @media only screen and (max-width:1400px) {
     .card-showcase {
         scale: 0.6;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .faq {
+       font-size: 16px;
+    }
+    .video .card-section {
+        flex-direction: column;
+        & .feature-card {
+            width: 75%;
+            margin: auto;
+        }
+    }
+    .giant-lure {
+        font-size: 20px !important;
+    }
+    .video .faro-video {
+        width: 90vw;
+        height: calc(90vw / (16 / 9));
+    }
+    .hero-section {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        & .content {
+            width: 85vw;
+            & .main-message {
+                width: 100%;
+                font-size: 50px;
+            }
+            & .signup-form {
+                width: 100%;
+            }
+        }
+        .floating-logo {
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        & .main-left {
+            height: 60vh;
+            .card-showcase {
+                height: 60vh;
+                align-items: flex-start;
+            }
+        }
+    }
+    .banner {
+        height: 60px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .main-message {
+        font-size: 40px !important;
     }
 }
 

@@ -6,10 +6,16 @@
     <title>FaroX</title>
     <link rel="icon" href="./assets/images/x.png">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/slider.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick-theme.min.css">
 </head>
 <body>
     <main>
+        <div class="banner">
+            <p> <strong>Limited Time Contest:</strong> Your Passport to a limitless Financial Future - <span class="remaining-time-banner"></span></p>
+        </div>
         <div class="hero-section">
         <section class="main-left">
             <div class="card-showcase">
@@ -35,7 +41,7 @@
                 <a href="#who-are-we" class="btn video-button">Who Are We?</a>
             </div> -->
             <form class="signup-form">
-                <h3 class="timer">Time Remaining: <span class="remainging-time">30:20:10:5s</span></h3>
+                <h3 class="timer">Time Remaining: <span class="remaining-time"></span></h3>
                 <div class="name">
                     <input class='half first' type="text" placeholder="Name"></input>
                 </div>
@@ -68,7 +74,7 @@
 
         <section class="video">
             <iframe class="faro-video" width="560" height="315" src="http://www.youtube.com/embed/Dw3BZ6O_8LY?si=fd3cUMXlC3R3j0ww?controls=1&autoplay=1"allowfullscreen></iframe>
-            <div class="card-section">
+            <div class="card-section  mobile-slides">
                 <div class="feature-card">
                     <h4>Collaborative Investments</h4>
                     <p>This is just some simple text</p>
@@ -111,6 +117,33 @@
 
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js"></script>
+    <script id="rendered-js" >
+        mobileOnlySlider(".mobile-slides", true, false, 767);
+      
+        function mobileOnlySlider($slidername, $dots, $arrows, $breakpoint) {
+          var slider = $($slidername);
+          var settings = {
+            mobileFirst: true,
+            dots: $dots,
+            arrows: $arrows,
+            responsive: [
+            {
+              breakpoint: $breakpoint,
+              settings: "unslick" }] };
+      
+          slider.slick(settings);
+      
+          $(window).on("resize", function () {
+            if ($(window).width() > $breakpoint) {
+              return;
+            }
+            if (!slider.hasClass("slick-initialized")) {
+              return slider.slick(settings);
+            }
+          });
+        }
+    </script>
     <script src="./assets/script.js"></script>
 </body>
 </html>
