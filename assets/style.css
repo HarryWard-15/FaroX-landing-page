@@ -579,7 +579,8 @@ summary {
         align-items: center;
         & .content {
             width: 85vw;
-            height: 100vh;
+            height: 75vh;
+            justify-content: flex-end;
             gap: 0;
             & .main-message {
                 width: 100%;
