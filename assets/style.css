@@ -578,6 +578,7 @@ summary {
         align-items: center;
         & .content {
             width: 85vw;
+            gap: 0;
             & .main-message {
                 width: 100%;
                 font-size: 50px;
@@ -607,6 +608,9 @@ summary {
 @media only screen and (max-width: 500px) {
     .main-message {
         font-size: 40px !important;
+    }
+    .timer {
+        font-size: 16px;
     }
 }
 
