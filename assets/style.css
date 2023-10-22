@@ -614,8 +614,9 @@ summary {
         width: 90%;
     }
     .chevron-container {
-        left: 90%;
+        left: 85%;
         top: 50%;
+        scale: 0.75;
         transform: translateY(-50%);
     }
 }
