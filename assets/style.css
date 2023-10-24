@@ -34,17 +34,19 @@ main {
 
 /* Main Content */
 .banner {
-    background: white;
+    background: #666666;
     width: 100%;
     position: fixed;
     top: 0;
     line-height: 30px;
     height: 25px;
     text-align: center;
+    color: white;
     z-index: 9999;
+    letter-spacing: 1.5px;
     & .remaining-time-banner {
-        color: red;
-        font-weight: bold;
+        color: WHITE;
+        font-weight: normal;
     }
 }
 .hero-section {
@@ -560,6 +562,12 @@ summary {
     }
 }
 @media only screen and (max-width: 767px) {
+    .splash-page .container {
+        width: 90%;
+        .logo {
+            width: 50vw;
+        }
+    }
     .hide-mobile {
         display: none;
     }
@@ -585,7 +593,7 @@ summary {
         justify-content: center;
         align-items: center;
         & .content {
-            width: 85vw;
+            width: 75vw;
             text-align: center;
             height: unset;
             margin-top: 20vh;
@@ -596,15 +604,11 @@ summary {
             }
             & .signup-form {
                 width: 100%;
+                margin: auto;
                 justify-content: center;
             }
         }
-        .floating-logo {
-            top: 70px;
-            /* left: 50%; */
-            /* transform: translateX(-50%); */
-            /* text-align: center; */
-        }
+
         & .main-left {
             height: 60vh;
             .card-showcase {
@@ -612,9 +616,6 @@ summary {
                 align-items: flex-start;
             }
         }
-    }
-    .banner {
-        height: 60px;
     }
     details {
         padding: 0px;
