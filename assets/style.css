@@ -69,11 +69,17 @@ main {
         min-width: 75px;
     }
 }
+.whyus {
+    font-size: 4rem;
+    color:white;
+    text-align: center;
+    margin-top: 100px;
+}
 
 
 .chevron-container {
     position: absolute;
-    bottom: 80px;
+    bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -132,22 +138,25 @@ main {
     & .main-message {
         text-align: center;
         color: white;
-        font-size: 5rem;
+        font-size: 5.5rem;
         max-width: 75%;
-        font-weight: bold;
+        font-weight: bolder;
         text-align: left;
     }
     & .sub-message {
         color: white;
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 500;
+        opacity: 0.7;
     }
 }
 .giant-lure {
     max-width: 100vw;
-    background: white;
+    /* background: #666666; */
+    background: linear-gradient(135deg, transparent 10%, rgba(187,2,161,0.30) 25%, rgba(69,1,108,0.3) 50%, rgba(0,212,255,0.30) 75%, transparent 90%);
     font-size: 40px;
     z-index: 999;
+    color: white;
     font-weight: bolder;
     text-align: center;
     padding: 50px 0;
@@ -258,7 +267,7 @@ form {
     & .card-section {
         display: flex;
         flex-direction: row;
-        margin: 50px auto 150px auto;
+        margin: 25px auto 150px auto;
         flex-direction: row;
         width: 75%;
         justify-content: space-between;
@@ -423,7 +432,7 @@ form {
     max-width: 1000px;
     margin: auto;
     & .question {
-        background: white;
+        background: #666666;
         background-size: 400%;
         animation: gradient 5s infinite;
         margin: 10px 0;
@@ -442,22 +451,26 @@ form {
         }
     }
     & .question-answer {
-        background: #222222;
         margin-top: 25px;
         border-radius: 10px;
         padding: 20px 10px;
         color: white;
-        text-indent: 15px;
+        font-weight: normal;
+        font-size: 20px;
     }
 }
 details{
     font-size: 1.5rem;
-    background: white;
+    background: #333333;
+    color:  white;
     background-size: 400%;
     animation: gradient 5s infinite;
     margin: 20px 0;
     border-radius: 15px;
     padding: 25px;
+    &:hover {
+        background: #666666;
+    }
   }
 
 summary {
@@ -494,11 +507,17 @@ summary {
 .faq {
     color: white;
     padding: 15px 25px;
-    border: 2px solid white;
     border-radius: 10px;
     width: max-content;
     margin: auto;
-    font-size: 35px;
+    font-size: 40px;
+}
+hr {
+    height: 5px;
+    border: none;
+    color: #666666;
+    background :#666666;
+    margin: 50px 0;
 }
 /* Animations */
 
