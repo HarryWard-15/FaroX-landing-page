@@ -59,8 +59,14 @@ main {
     left: 25px;
     color: white;
     font-size: 8px;
+    width: 20%;
     & h2 {
         font-weight: normal;
+    }
+    & .full-logo {
+        max-width: 200px;
+        width: 100%;
+        min-width: 75px;
     }
 }
 

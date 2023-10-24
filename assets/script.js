@@ -2,7 +2,6 @@ const card = document.querySelector('.card');
 const shadow = document.querySelector('.shadow');
 const splashPage = document.querySelector('.splash-page');
 const bannerTimer = document.querySelector('.remaining-time-banner');
-const heroTimer = document.querySelector('.remaining-time');
 
 var countDownDate = new Date("Dec 1, 2023 00:00:00").getTime();
 
@@ -35,7 +34,6 @@ var timer = setInterval(function() {
 
     let timeString = `${days}:${hours}:${minutes}:${seconds}s`;
 
-    heroTimer.innerHTML = timeString;
     bannerTimer.innerHTML = timeString;
 },1000);
 
