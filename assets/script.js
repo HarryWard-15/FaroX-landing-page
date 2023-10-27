@@ -2,6 +2,10 @@ const card = document.querySelector('.card');
 const shadow = document.querySelector('.shadow');
 const splashPage = document.querySelector('.splash-page');
 const bannerTimer = document.querySelector('.remaining-time-banner');
+const positionForm = document.querySelector('.position-in-queue');
+const positionFormBottom = document.querySelector('.position-in-queue-bottom');
+const positionBanner = document.querySelector('.queue');
+
 
 var countDownDate = new Date("Dec 1, 2023 00:00:00").getTime();
 
@@ -37,10 +41,23 @@ var timer = setInterval(function() {
     bannerTimer.innerHTML = timeString;
 },1000);
 
+function insertPosition () {
+    let now = new Date().getTime();
+    let timeLeft = countDownDate - now;
 
+    let timeLeftReduced = Math.floor(timeLeft / 1000);
 
+    let numPeople = 2000 - (timeLeftReduced / 1476);
+    let numPeopleRounded = Math.floor(numPeople);
+
+    positionBanner.innerHTML = numPeopleRounded;
+    positionForm.innerHTML = numPeopleRounded;
+    positionFormBottom.innerHTML = numPeopleRounded;
+};
+
+insertPosition();
 spinCard(card);
-animateSplash()
+animateSplash();
 
 
 

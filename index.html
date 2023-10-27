@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" id="viral-loops-loader" data-campaign-id="cL8yPiUdWv5x5uvvuhM1Q3cX4rk" src="https://app.viral-loops.com/widgetsV2/core/loader.js"></script>
 </head>
 <body>
     <main>
@@ -39,11 +40,19 @@
                 <h1 class="main-message">Meet FaroX</h1>
                 <h2 class="sub-message">Your Passport to a limitless Financial Future</h2>
             </div>
-            <form class="signup-form">
-                <input class='half first' type="text" placeholder="Name"></input>
-                <input class='full' type="email" placeholder="Email"></input>
+            <form class="signup-form"  
+                data-vl-campaign-id="cL8yPiUdWv5x5uvvuhM1Q3cX4rk"
+                data-vl-container="join-stage"
+                data-vl-action="join-stage#join"
+                >
+                <input class='half first' type="text" placeholder="Name" data-vl-join-stage-target="input.firstname"></input>
+                <input class='full' type="email" placeholder="Email" data-vl-join-stage-target="input.email"></input>
+                <input style="display: none;" class="position-in-queue" data-vl-join-stage-target="input.lastname"></input>
                 <button type="submit" class="form-submit btn">Join Our Journey</button>
             </form>
+            <div data-vl-campaign-id="cL8yPiUdWv5x5uvvuhM1Q3cX4rk" data-vl-container="sharing-stage">
+                <form-widget ucid="cL8yPiUdWv5x5uvvuhM1Q3cX4rk"></form-widget>
+              </div>
             <div class="chevron-container">
                 <div class="chevron"></div>
                 <div class="chevron"></div>
@@ -64,9 +73,7 @@
             </div>
         </section>
 
-        <!-- <hr> -->
-
-        <h3 class="giant-lure" id="who-are-we"><i class="fa fa-play-circle-o" style="font-size:36px;"></i>  Watch the video below to see why <span class="queue">#</span> have joined the FaroX Family</h3>
+        <h3 class="giant-lure" id="who-are-we"><i class="fa fa-play-circle-o" style="font-size:36px;"></i>  Watch the video below to see why <span class="queue">#</span> people have joined the FaroX Family</h3>
 
         <div class="background-image">
 
@@ -87,11 +94,18 @@
                     <p>Replace all other tools and become a money expert even if you're new. Gain access to our Financial Academy for no cost.</p>
                 </div>
             </div>
-            <form class="signup-form">
-                <input class='half first' type="text" placeholder="Name"></input>
-                <input class='full' type="email" placeholder="Email"></input>
+            <form class="signup-form"  
+                data-vl-campaign-id="cL8yPiUdWv5x5uvvuhM1Q3cX4rk"
+                data-vl-container="join-stage"
+                data-vl-action="join-stage#join">
+                <input class='half first' type="text" placeholder="Name" data-vl-join-stage-target="input.firstname"></input>
+                <input class='full' type="email" placeholder="Email" data-vl-join-stage-target="input.email"></input>
+                <input style="display: none;" class="position-in-queue-bottom" data-vl-join-stage-target="input.lastname"></input>
                 <button type="submit" class="form-submit btn">Join Our Journey</button>
             </form>
+            <div data-vl-campaign-id="cL8yPiUdWv5x5uvvuhM1Q3cX4rk" data-vl-container="sharing-stage">
+                <form-widget ucid="cL8yPiUdWv5x5uvvuhM1Q3cX4rk"></form-widget>
+            </div>
         </section>
 
         <hr>
