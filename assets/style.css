@@ -628,6 +628,19 @@ hr {
        }
     }
 }
+.no-padding {
+    margin: 0 !important
+}
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    & a {
+        text-decoration: none;
+        color: white;
+        opacity: 0.5;
+    }
+}
 /* Animations */
 
 @keyframes gradient {
