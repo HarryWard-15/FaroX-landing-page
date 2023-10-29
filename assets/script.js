@@ -2,9 +2,10 @@ const card = document.querySelector('.card');
 const shadow = document.querySelector('.shadow');
 const splashPage = document.querySelector('.splash-page');
 const bannerTimer = document.querySelector('.remaining-time-banner');
-const positionForm = document.querySelector('.position-in-queue');
-const positionFormBottom = document.querySelector('.position-in-queue-bottom');
 const positionBanner = document.querySelector('.queue');
+const signupForm = document.querySelector('.signup-form');
+const signupForm2 = document.querySelector('.signup-form-2');
+
 
 
 var countDownDate = new Date("Dec 1, 2023 00:00:00").getTime();
@@ -51,8 +52,8 @@ function insertPosition () {
     let numPeopleRounded = Math.floor(numPeople);
 
     positionBanner.innerHTML = numPeopleRounded;
-    positionForm.innerHTML = numPeopleRounded;
-    positionFormBottom.innerHTML = numPeopleRounded;
+    signupForm.setAttribute('data-join-state-input.lastname-value', numPeopleRounded);
+    signupForm2.setAttribute('data-join-state-input.lastname-value', numPeopleRounded);
 };
 
 insertPosition();
