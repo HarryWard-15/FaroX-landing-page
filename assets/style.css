@@ -466,14 +466,14 @@ form {
 }
 .front {
     width: 325px;
-    background: url(./images/cardfront.png);
+    background: url(./images/cardfront.webp);
     transform: translate3d(0, 0, 2px) rotate(30deg);
     box-shadow: 0 0 20px 1px white;
     border-radius: 20px;
 }
 .back {
     width: 325px;
-    background: url(./images/cardback.png);
+    background: url(./images/cardback.webp);
     transform: translate3d(0, 0,-2px) rotateY(180deg) rotate(-30deg);
     box-shadow: 0 0 20px 1px white;
     border-radius: 20px;
